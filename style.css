@@ -1,0 +1,209 @@
+:root {
+    --red:#f9032f;
+    --black:#000;
+    --white:#fff;
+    --purple:#800080;
+    --green:#11dd1f90;
+}
+* {
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    font-family: 'Popins' ,sans-serif;
+}
+.navbar{
+    background: var(--black);
+    height: 60px;
+    padding: 0.5rem calc((100vw - 1200px)/2);
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    position: relative;
+}
+.navbar__logo{
+    color: var(--white);
+    text-decoration:none;
+    padding-left:  1rem;
+    font: size 1.5rem; ;
+}
+.navbar__link{
+    color: var(--white);
+    text-decoration:none;
+    padding: 0rem 1rem;
+}
+.navbar_link:hover{
+    color: var(--red);
+}
+
+@media screen and (max-width: 1366px) {
+    body.active{
+        overflow-y: hidden;
+        overflow-x: hidden;
+    }
+    .navbar__link{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .navbar__menu{
+        display:grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3,100px) ;
+        position: absolute;
+        width: 100%;
+        top: -1000px;
+
+
+    }
+    .navbar__menu.active{
+        top: 100%;
+        opacity: 1;
+        z-index: 99;
+        height: 100vh;
+        font-size: 1.5rem;
+        background: var(--black);
+    }
+    /* задаем разммеры для 3 строк */
+    .navbar__toggle .bar{
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background: var(--white);
+        display: block;
+        cursor:pointer
+    }
+    #mobile-menu {
+        position: absolute;
+        top: 15%;
+        right: 5%;
+        transform:translate(5%,20%);
+    }
+    /* meka animation of 3 strign into shape x*/
+    #mobile-menu.is-active .bar:nth-child(2){
+        opacity: 0;
+    }
+    #mobile-menu.is-active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    #mobile-menu.is-active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+
+
+
+}
+/* put the picture as a background   */
+.hero{
+    background:linear-gradient(to right, rgba(0,0,0,0.4) ,rgba(0,0,0,0.1)) ,url('./images/1person.jpg');
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    padding: 0.5rem calc((100vw-1200px)/2);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.hero__content {
+    color:var(--purple);
+    padding :3rem 1rem;
+    line-height: 1;
+}
+.hero__content h1{
+    font-size: clamp(3rem,8vw,7rem);
+    text-transform: uppercase;
+    margin-bottom:0.5rem
+}
+.hero__content p{
+    font-size: clamp(1rem,4vw,2.5rem);
+
+    margin-bottom:3rem
+}
+.button{
+    padding:1rem 1rem;
+    border:none;
+    background: var(--green);
+    color:var(--black);
+    cursor:pointer;
+    border-radius: 2px;
+
+}
+.button:hover{
+    background: var(--black);
+}
+
+
+/* trainers*/
+.trainers{
+    padding:8rem calc((100vw-1200px)/2) ;
+}
+.trainer__containers{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 1rem;
+}
+.services__img{
+    width: 100%;
+    height: 100%;
+}
+.topline{
+    color:var(--red);
+    text-transform : uppercase;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+.services__heading{
+    margin-bottom: 1rem;
+    font-size: clamp(2rem,6vw,3rem);
+}
+.services__features{
+    list-style: none;
+    text-decoration: underline;
+}
+.services__feature{
+    margin-bottom: 1.5rem;
+    font-size: clamp(1rem,5vw,1.2rem);
+}
+/*programs*/
+.programms{
+    background: var(--black);
+    color:6rem calc((100vw-1100px)/2);
+    text-align: center;
+}
+.programms h1{
+    margin-bottom: 1rem;
+    font-size:clamp(2rem,5vw,3rem);
+    padding :0 1rem;
+}
+.programms_desc{
+    margin-bottom: 3rem;
+    font-size: clamp(1rem,3vw,1.5rem);
+    padding:1rem;
+}
+.programms__wrapper{
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1rem;
+}
+table {
+    width: 400px;
+}
+th,caption{
+    text-align: left;
+}
+table,th,td{
+    border: 1px solid var(--black);
+    border-collapse:collapse ;
+}
+th,td{
+    padding: 10px;
+}
+
+tr:nth-child(even){
+    background: #fff;
+}
+tr:nth-child(odd){
+    background: #ddd;
+}
